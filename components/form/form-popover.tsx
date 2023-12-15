@@ -52,7 +52,6 @@ export const FormPopover = ({
   const onSubmit = (formData: FormData) => {
     const title = formData.get("title") as string;
     const image = formData.get("image") as string;
-
     execute({ title, image });
   }
 
@@ -72,7 +71,7 @@ export const FormPopover = ({
         </div>
         <PopoverClose ref={closeRef} asChild>
           <Button
-            className="h-auto w-auto p-2 absolute top-2 right-2 text-neutral-600"
+            className="h-auto w-auto p-2 absolute top-2 right-2 text-neutral-600 outline-none " 
             variant="ghost"
           >
             <X className="h-4 w-4" />

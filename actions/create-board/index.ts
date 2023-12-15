@@ -49,7 +49,7 @@ const handler = async (data: InputType): Promise<ReturnType> => {
       error: "Missing fields. Failed to create board."
     };
   }
-
+ 
   let board;
 
   try {
@@ -64,7 +64,6 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         imageLinkHTML,
       }
     });
-
     if (!isPro) {
      await incrementAvailableCount();
     }

@@ -3,7 +3,7 @@ import { OrganizationSwitcher, UserButton } from "@clerk/nextjs";
 
 import { Logo } from "@/components/logo";
 import { Button } from "@/components/ui/button";
-// import { FormPopover } from "@/components/form/form-popover";
+import { FormPopover } from "@/components/form/form-popover";
 
 import { MobileSidebar } from "./mobile-sidebar";
 //
@@ -15,7 +15,7 @@ export const Navbar = () => {
         <div className="hidden md:flex">
           <Logo />
         </div>
-        {/* <FormPopover align="start" side="bottom" sideOffset={18}> */}
+        <FormPopover align="start" side="bottom" sideOffset={18}>
         <Button
           variant="primary"
           size="sm"
@@ -23,8 +23,8 @@ export const Navbar = () => {
         >
           Create
         </Button>
-        {/* </FormPopover> */}
-        {/* <FormPopover> */}
+        </FormPopover>
+        <FormPopover>
         <Button
           variant="primary"
           size="sm"
@@ -32,7 +32,7 @@ export const Navbar = () => {
         >
           <Plus className="h-4 w-4" />
         </Button>
-        {/* </FormPopover> */}
+        </FormPopover>
       </div>
       <div className="ml-auto flex items-center gap-x-2">
         <OrganizationSwitcher
