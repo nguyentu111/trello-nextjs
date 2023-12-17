@@ -1,0 +1,36 @@
+version: '3.8'
+
+networks:
+  default:
+
+services:
+  nextjs-app:
+    container_name: nextjs-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+    stdin_open: true
+    tty: true
+    volumes:
+      - ./nextjs-app:/app
+      - /app/node_modules
+      - /app/.next
+    networks:
+      - default
+  mysql:
+    image: mysql:latest
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_PASSWORD: ahengaheng
+      MYSQL_DATABASE: taskify_db
+      MYSQL_USER: aheng
+      MYSQL_PASSWORD: ahengaheng
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql_data:/var/lib/mysql
+volumes: 
+  mysql-volume:
